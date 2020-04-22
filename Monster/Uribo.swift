@@ -13,14 +13,14 @@ class Uribo: Monster {
         super.init(name:"ウリボー",hp:15,ap:7,dp:7,sp:4)
     }
     //Q3:Uriboクラスの関数に引数/返り値を設けてみよう
-    func bite(){
-        let damage = 6
-        let text = "ウリボーの攻撃:ウリボーは敵に噛み付いた." + String(damage) + "のダメージを与えた."
-        print(text)
+    func bite(enemy:Monster)->(damage:Int,text:String){
+        let damage = self.attackPoint + 6 - enemy.defencePoint
+        let text = "ウリボーの攻撃\nウリボーは敵に噛み付いた.\n" + String(damage) + "のダメージを与えた."
+        return (damage,text)
     }
-    func eat(){
+    func eat()-> (recovery:Int,text:String){
         let recovery = 2
-        let text = "ウリボーの回復:ウリボーは木のみを食べた." + String(recovery) + "のHPを回復した."
-        print(text)
+        let text = "ウリボーの回復\nウリボーは木のみを食べた.\n" + String(recovery) + "のHPを回復した."
+        return (recovery,text)
     }
 }

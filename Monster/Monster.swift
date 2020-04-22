@@ -7,6 +7,8 @@
 //
 
 import Foundation
+//UIKitをimportしてUILabelを使用可能にする
+import UIKit
 
 class Monster{
     //モンスターに必要な変数
@@ -26,8 +28,12 @@ class Monster{
     }
     
     //写経④:showStatus関数でストーリーボードに表示できるようにしよう
-    func showStatus() {
-        
+    func showStatus(nameLabel:UILabel,hpLabel:UILabel,apLabel:UILabel,dpLabel:UILabel,spLabel:UILabel) {
+        nameLabel.text = monsterName
+        hpLabel.text = "HP:" + String(hitPoint)
+        apLabel.text = "AP:" + String(attackPoint)
+        dpLabel.text = "DP:" + String(defencePoint)
+        spLabel.text = "SP:" + String(speedPoint)
     }
     
     

@@ -29,14 +29,24 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //写経④:showStatus関数でストーリーボードに表示できるようにしよう
+        hiyoko.showStatus(nameLabel: hiyokoNameLabel, hpLabel: hiyokoHPLabel, apLabel: hiyokoAPLabel, dpLabel: hiyokoDPLabel, spLabel: hiyokoSPLabel)
+        uribo.showStatus(nameLabel: uriboNameLabel, hpLabel: uriboHPLabel, apLabel: uriboAPLabel, dpLabel: uriboDPLabel, spLabel: uriboSPLabel)
     }
     
     @IBAction func attack(){
-        
+        //uribo.hitPoint = uribo.hitPoint - hiyoko.poke(enemy:uribo).damageを簡略に記述したもの
+        uribo.hitPoint -= hiyoko.poke(enemy: uribo).damage
+        //返り値を2つ持つ関数では、関数を使用した後に.で返り値を1つ指定できる
+        actionTextView.text = hiyoko.poke(enemy: uribo).text
+        //HPが変化したのをLabelに反映させる
+        viewDidLoad()
     }
     
     @IBAction func recover(){
-        
+        hiyoko.hitPoint += hiyoko.sleep().recovery
+        actionTextView.text = hiyoko.sleep().text
+        //HPが変化したのをLabelに反映させる
+        viewDidLoad()
     }
 
 

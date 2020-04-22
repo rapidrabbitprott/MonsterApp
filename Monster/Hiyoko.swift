@@ -14,15 +14,17 @@ class Hiyoko: Monster {
         super.init(name:"ひよこ",hp:7,ap:10,dp:4,sp:7)
     }
     //写経⑤:Hiyokoクラスの関数に引数/返り値を設定
-    func poke(){
-        let damage = 3
-        let text = "ひよこの攻撃:ひよこは敵を突ついた." + String(damage) + "のダメージを与えた."
-        print(text)
+    func poke(enemy:Monster)->(damage:Int,text:String){
+        //HiyokoはMonsterクラスの値を継承しているので，self.attackPointで自身の攻撃力の値を取得できる
+        let damage = self.attackPoint + 3 - enemy.defencePoint
+        //\はoption+¥で出すことができる。改行を表す
+        let text = "ひよこの攻撃\nひよこは" + enemy.monsterName + "を突ついた\n" + String(damage) + "のダメージを与えた"
+        return (damage,text)
     }
     //写経⑤:Hiyokoクラスの関数に引数/返り値を設定
-    func sleep(){
+    func sleep()-> (recovery:Int,text:String){
         let recovery = 4
-        let text = "ひよこの回復:ひよこは眠りに入った." + String(recovery) + "のHPを回復した."
-        print(text)
+        let text = "ひよこの回復\nひよこは眠りに入った.\n" + String(recovery) + "のHPを回復した."
+        return (recovery,text)
     }
 }
