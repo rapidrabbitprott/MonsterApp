@@ -13,6 +13,7 @@
 		5FFB076F244E9B3E00648EB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FFB076D244E9B3E00648EB5 /* Main.storyboard */; };
 		5FFB0771244E9B4000648EB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FFB0770244E9B4000648EB5 /* Assets.xcassets */; };
 		5FFB0774244E9B4000648EB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FFB0772244E9B4000648EB5 /* LaunchScreen.storyboard */; };
+		5FFB077E244E9D6300648EB5 /* Monster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFB077D244E9D6300648EB5 /* Monster.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		5FFB0770244E9B4000648EB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5FFB0773244E9B4000648EB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5FFB0775244E9B4000648EB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5FFB077D244E9D6300648EB5 /* Monster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monster.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		5FFB0766244E9B3E00648EB5 /* Monster */ = {
 			isa = PBXGroup;
 			children = (
+				5FFB077D244E9D6300648EB5 /* Monster.swift */,
 				5FFB0767244E9B3E00648EB5 /* AppDelegate.swift */,
 				5FFB0769244E9B3E00648EB5 /* SceneDelegate.swift */,
 				5FFB076B244E9B3E00648EB5 /* ViewController.swift */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FFB077E244E9D6300648EB5 /* Monster.swift in Sources */,
 				5FFB076C244E9B3E00648EB5 /* ViewController.swift in Sources */,
 				5FFB0768244E9B3E00648EB5 /* AppDelegate.swift in Sources */,
 				5FFB076A244E9B3E00648EB5 /* SceneDelegate.swift in Sources */,
@@ -293,7 +297,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.morikawa.Monster;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -310,7 +314,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.morikawa.Monster;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
