@@ -17,21 +17,19 @@ class Monster{
     var speedPoint: Int
     
     //インスタンス生成時(設計図から実体を作った時)の初期値
-    init() {
-        monsterName = "ひよこ"
-        hitPoint = 10
-        attackPoint = 7
-        defencePoint = 4
-        speedPoint = 6
+    init(name:String,hp:Int,ap:Int,dp:Int,sp:Int) {
+        monsterName = name
+        hitPoint = hp
+        attackPoint = ap
+        defencePoint = dp
+        speedPoint = sp
     }
     
-    //スタータスを表示する関数
+    //写経④:showStatus関数でストーリーボードに表示できるようにしよう
     func showStatus() {
-        print(monsterName)
-        print(hitPoint)
-        print(attackPoint)
-        print(defencePoint)
-        print(speedPoint)
+        
     }
+    
+    
 }
 

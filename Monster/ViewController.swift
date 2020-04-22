@@ -10,13 +10,33 @@ import UIKit
 
 class ViewController: UIViewController {
     //インスタンス化(設計図から実物を作った)
-    var monster = Monster()
+    var hiyoko = Hiyoko()
+    var uribo = Uribo()
+    @IBOutlet var hiyokoNameLabel:UILabel!
+    @IBOutlet var hiyokoHPLabel:UILabel!
+    @IBOutlet var hiyokoAPLabel:UILabel!
+    @IBOutlet var hiyokoDPLabel:UILabel!
+    @IBOutlet var hiyokoSPLabel:UILabel!
+    
+    @IBOutlet var uriboNameLabel:UILabel!
+    @IBOutlet var uriboHPLabel:UILabel!
+    @IBOutlet var uriboAPLabel:UILabel!
+    @IBOutlet var uriboDPLabel:UILabel!
+    @IBOutlet var uriboSPLabel:UILabel!
+    
+    @IBOutlet var actionTextView:UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //Monsterクラスの関数を使用
-        monster.showStatus()
-        // Do any additional setup after loading the view.
+        //写経④:showStatus関数でストーリーボードに表示できるようにしよう
+    }
+    
+    @IBAction func attack(){
+        
+    }
+    
+    @IBAction func recover(){
+        
     }
 
 
