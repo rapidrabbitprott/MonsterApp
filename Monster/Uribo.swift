@@ -12,15 +12,15 @@ class Uribo: Monster {
     init() {
         super.init(name:"ウリボー",hp:15,ap:7,dp:7,sp:4)
     }
-    //Q3:Uriboクラスの関数に引数/返り値を設けてみよう
-    func bite(enemy:Monster)->(damage:Int,text:String){
-        let damage = self.attackPoint + 6 - enemy.defencePoint
-        let text = "ウリボーの攻撃\nウリボーは敵に噛み付いた.\n" + String(damage) + "のダメージを与えた."
+    //Q4:Monsterクラスにattack関数/recovery関数を記述し、poke関数とbite関数，sleep関数とeat関数の共通処理を簡略化せよ
+    func bite(enemy:Monster, power:Int = 5, action:String="噛みつく")-> (damage:Int,text:String){
+        let damage = super.attack(enemy: enemy, power: power, action: action).damage
+        let text = super.attack(enemy: enemy, power: power, action: action).text
         return (damage,text)
     }
-    func eat()-> (recovery:Int,text:String){
-        let recovery = 2
-        let text = "ウリボーの回復\nウリボーは木のみを食べた.\n" + String(recovery) + "のHPを回復した."
+    func eat(ourParty:Monster,power:Int = 6,action:String="木のみを食べた")-> (recovery:Int,text:String){
+        let recovery = super.recover(ourParty: ourParty, power: power, action: action).recovery
+        let text = super.recover(ourParty: ourParty, power: power, action: action).text
         return (recovery,text)
     }
-}
+} 

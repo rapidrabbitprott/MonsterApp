@@ -13,18 +13,17 @@ class Hiyoko: Monster {
         //親クラスの初期値を継承し、引数にひよこのステータスを代入
         super.init(name:"ひよこ",hp:7,ap:10,dp:4,sp:7)
     }
-    //写経⑤:Hiyokoクラスの関数に引数/返り値を設定
-    func poke(enemy:Monster)->(damage:Int,text:String){
-        //HiyokoはMonsterクラスの値を継承しているので，self.attackPointで自身の攻撃力の値を取得できる
-        let damage = self.attackPoint + 3 - enemy.defencePoint
-        //\はoption+¥で出すことができる。改行を表す
-        let text = "ひよこの攻撃\nひよこは" + enemy.monsterName + "を突ついた\n" + String(damage) + "のダメージを与えた"
+    //Q4:Monsterクラスにattack関数/recovery関数を記述し、poke関数とbite関数，sleep関数とeat関数の共通処理を簡略化せよ
+    func poke(enemy:Monster, power:Int = 4, action:String="突つく")-> (damage:Int,text:String){
+        let damage = super.attack(enemy: enemy, power: power, action: action).damage
+        let text = super.attack(enemy: enemy, power: power, action: action).text
         return (damage,text)
     }
-    //写経⑤:Hiyokoクラスの関数に引数/返り値を設定
-    func sleep()-> (recovery:Int,text:String){
-        let recovery = 4
-        let text = "ひよこの回復\nひよこは眠りに入った.\n" + String(recovery) + "のHPを回復した."
+   
+    func sleep(ourParty:Monster,power:Int = 8,action:String="眠りに入った")-> (recovery:Int,text:String){
+        let recovery = super.recover(ourParty: ourParty, power: power, action: action).recovery
+        let text = super.recover(ourParty: ourParty, power: power, action: action).text
         return (recovery,text)
+        
     }
 }

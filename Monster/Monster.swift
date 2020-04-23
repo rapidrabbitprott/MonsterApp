@@ -36,6 +36,18 @@ class Monster{
         spLabel.text = "SP:" + String(speedPoint)
     }
     
+    //Q4:Monsterクラスにattack関数/recovery関数を記述し、poke関数とbite関数，sleep関数とeat関数の共通処理を簡略化せよ
+    func attack(enemy:Monster,power:Int,action:String)-> (damage:Int,text:String){
+        //HiyokoはMonsterクラスの値を継承しているので，self.attackPointで自身の攻撃力の値を取得できる
+        let damage = self.attackPoint + power - enemy.defencePoint
+        let text = self.monsterName + "の" + action + "攻撃\n" + enemy.monsterName + "に" + String(damage) + "のダメージを与えた"
+        return (damage,text)
+    }
     
+    func recover(ourParty:Monster,power:Int,action:String)-> (recovery:Int,text:String){
+        let recovery = power
+        let text = self.monsterName + "の回復\n" + ourParty.monsterName + "は" + action + "\n" + String(recovery) + "のHPを回復した."
+        return (recovery,text)
+    }
 }
 

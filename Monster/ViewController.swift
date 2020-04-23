@@ -34,6 +34,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func attack(){
+        //Q4
         //uribo.hitPoint = uribo.hitPoint - hiyoko.poke(enemy:uribo).damageを簡略に記述したもの
         uribo.hitPoint -= hiyoko.poke(enemy: uribo).damage
         //返り値を2つ持つ関数では、関数を使用した後に.で返り値を1つ指定できる
@@ -43,8 +44,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func recover(){
-        hiyoko.hitPoint += hiyoko.sleep().recovery
-        actionTextView.text = hiyoko.sleep().text
+        hiyoko.hitPoint += hiyoko.sleep(ourParty: hiyoko).recovery
+        actionTextView.text = hiyoko.sleep(ourParty: hiyoko).text
         //HPが変化したのをLabelに反映させる
         viewDidLoad()
     }
