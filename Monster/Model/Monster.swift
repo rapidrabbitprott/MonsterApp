@@ -14,6 +14,7 @@ class Monster{
     //モンスターに必要な変数
     var monsterName: String
     var hitPoint: Int
+    var limitHitPoint:Int
     var attackPoint: Int
     var defencePoint: Int
     var speedPoint: Int
@@ -25,6 +26,7 @@ class Monster{
         attackPoint = ap
         defencePoint = dp
         speedPoint = sp
+        limitHitPoint = hp
     }
     
     //写経④:showStatus関数でストーリーボードに表示できるようにしよう
@@ -41,13 +43,28 @@ class Monster{
         //HiyokoはMonsterクラスの値を継承しているので，self.attackPointで自身の攻撃力の値を取得できる
         let damage = self.attackPoint + power - enemy.defencePoint
         let text = self.monsterName + "の" + action + "攻撃\n" + enemy.monsterName + "に" + String(damage) + "のダメージを与えた"
+        //Q5
+        calcDamage(monster: enemy,damage: damage)
         return (damage,text)
     }
     
     func recover(ourParty:Monster,power:Int,action:String)-> (recovery:Int,text:String){
         let recovery = power
         let text = self.monsterName + "の回復\n" + ourParty.monsterName + "は" + action + "\n" + String(recovery) + "のHPを回復した."
+        //Q5
+        calcDamage(monster: ourParty,recovery: recovery)
         return (recovery,text)
+    }
+    //Q5Monsterクラスにダメージ計算及び死亡判定を行う関数を書き、attack関数，recovery関数に用いよ
+    func calcDamage(monster:Monster,damage:Int = 0,recovery:Int = 0){
+        let ans = monster.hitPoint - damage + recovery
+        if ans < 0 {
+            monster.hitPoint = 0
+        } else if ans > monster.limitHitPoint {
+            monster.hitPoint = monster.limitHitPoint
+        } else {
+            monster.hitPoint = ans
+        }
     }
 }
 

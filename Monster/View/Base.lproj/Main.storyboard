@@ -10,7 +10,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Monster" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="playStoryboard" modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="Monster" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -135,25 +135,67 @@
                     </view>
                     <connections>
                         <outlet property="actionTextView" destination="WmD-lq-gzq" id="P8Z-FN-R9h"/>
+                        <outlet property="attackButton" destination="c8m-V2-Ci3" id="QLS-CL-Tjl"/>
                         <outlet property="hiyokoAPLabel" destination="jhD-le-hjU" id="Fcx-Pi-whV"/>
                         <outlet property="hiyokoDPLabel" destination="7dO-Zt-mBB" id="qZe-u3-BK8"/>
                         <outlet property="hiyokoHPLabel" destination="xLS-JH-q00" id="bcZ-CV-Idt"/>
                         <outlet property="hiyokoNameLabel" destination="5r4-xu-8kS" id="Gg5-Ob-92e"/>
                         <outlet property="hiyokoSPLabel" destination="wxv-JW-PIU" id="jew-Aa-F1E"/>
+                        <outlet property="recoverButton" destination="k3i-8M-c7a" id="XFO-5w-f06"/>
                         <outlet property="uriboAPLabel" destination="Qzi-wh-oLc" id="PC2-oO-txU"/>
                         <outlet property="uriboDPLabel" destination="C1d-TQ-94A" id="ITN-OR-y7N"/>
                         <outlet property="uriboHPLabel" destination="hya-G7-d2r" id="cfe-9G-FbN"/>
                         <outlet property="uriboNameLabel" destination="clv-8C-zAV" id="XUd-Sf-gyr"/>
                         <outlet property="uriboSPLabel" destination="oUO-hT-F3b" id="Ut7-Rr-YtY"/>
+                        <segue destination="fMa-mb-RdM" kind="show" identifier="toResult" id="Cst-Es-fMm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="139" y="96"/>
         </scene>
+        <!--Result View Controller-->
+        <scene sceneID="o50-oR-L6G">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="fMa-mb-RdM" customClass="ResultViewController" customModule="Monster" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AOD-xR-roe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="決着" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="COo-zd-0CW">
+                                <rect key="frame" x="137" y="128" width="101" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YCO-nx-HL3">
+                                <rect key="frame" x="152" y="249" width="70" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="return" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                </state>
+                                <connections>
+                                    <action selector="back" destination="fMa-mb-RdM" eventType="touchUpInside" id="lf4-ih-BBc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="JNU-l5-bz4"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="SIb-sL-ky8"/>
+                    <connections>
+                        <outlet property="resultLabel" destination="COo-zd-0CW" id="Pw4-AN-r2x"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ieH-eQ-E1p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="989.60000000000002" y="95.802098950524751"/>
+        </scene>
     </scenes>
     <resources>
         <image name="hiyoko.png" width="560" height="560"/>
+        <image name="return" catalog="system" width="128" height="101"/>
         <image name="uribo.png" width="560" height="560"/>
     </resources>
 </document>

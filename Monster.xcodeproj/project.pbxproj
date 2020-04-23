@@ -18,6 +18,7 @@
 		5FFB078224503C6D00648EB5 /* Uribo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFB078124503C6D00648EB5 /* Uribo.swift */; };
 		5FFB0784245042C700648EB5 /* uribo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FFB0783245042C700648EB5 /* uribo.png */; };
 		5FFB0786245042D900648EB5 /* hiyoko.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FFB0785245042D900648EB5 /* hiyoko.png */; };
+		5FFB07A824512D0F00648EB5 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFB07A724512D0F00648EB5 /* ResultViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		5FFB078124503C6D00648EB5 /* Uribo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Uribo.swift; sourceTree = "<group>"; };
 		5FFB0783245042C700648EB5 /* uribo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uribo.png; sourceTree = "<group>"; };
 		5FFB0785245042D900648EB5 /* hiyoko.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hiyoko.png; sourceTree = "<group>"; };
+		5FFB07A724512D0F00648EB5 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,20 +68,45 @@
 		5FFB0766244E9B3E00648EB5 /* Monster */ = {
 			isa = PBXGroup;
 			children = (
-				5FFB077D244E9D6300648EB5 /* Monster.swift */,
-				5FFB077F2450251C00648EB5 /* Hiyoko.swift */,
-				5FFB078124503C6D00648EB5 /* Uribo.swift */,
 				5FFB0767244E9B3E00648EB5 /* AppDelegate.swift */,
 				5FFB0769244E9B3E00648EB5 /* SceneDelegate.swift */,
-				5FFB076B244E9B3E00648EB5 /* ViewController.swift */,
-				5FFB076D244E9B3E00648EB5 /* Main.storyboard */,
-				5FFB0783245042C700648EB5 /* uribo.png */,
-				5FFB0785245042D900648EB5 /* hiyoko.png */,
-				5FFB0770244E9B4000648EB5 /* Assets.xcassets */,
+				5FFB07A92451369200648EB5 /* Model */,
+				5FFB07AB245136C300648EB5 /* View */,
+				5FFB07AA245136A500648EB5 /* Controller */,
 				5FFB0772244E9B4000648EB5 /* LaunchScreen.storyboard */,
 				5FFB0775244E9B4000648EB5 /* Info.plist */,
 			);
 			path = Monster;
+			sourceTree = "<group>";
+		};
+		5FFB07A92451369200648EB5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5FFB077D244E9D6300648EB5 /* Monster.swift */,
+				5FFB077F2450251C00648EB5 /* Hiyoko.swift */,
+				5FFB078124503C6D00648EB5 /* Uribo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5FFB07AA245136A500648EB5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5FFB076B244E9B3E00648EB5 /* ViewController.swift */,
+				5FFB07A724512D0F00648EB5 /* ResultViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5FFB07AB245136C300648EB5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5FFB076D244E9B3E00648EB5 /* Main.storyboard */,
+				5FFB0783245042C700648EB5 /* uribo.png */,
+				5FFB0785245042D900648EB5 /* hiyoko.png */,
+				5FFB0770244E9B4000648EB5 /* Assets.xcassets */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,6 +184,7 @@
 			files = (
 				5FFB077E244E9D6300648EB5 /* Monster.swift in Sources */,
 				5FFB07802450251C00648EB5 /* Hiyoko.swift in Sources */,
+				5FFB07A824512D0F00648EB5 /* ResultViewController.swift in Sources */,
 				5FFB076C244E9B3E00648EB5 /* ViewController.swift in Sources */,
 				5FFB0768244E9B3E00648EB5 /* AppDelegate.swift in Sources */,
 				5FFB076A244E9B3E00648EB5 /* SceneDelegate.swift in Sources */,
